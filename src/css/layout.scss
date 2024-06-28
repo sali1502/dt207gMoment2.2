@@ -1,0 +1,152 @@
+@use 'base';
+@use 'keyframes';
+
+* {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-gap: 0px;
+    max-width: 700px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    margin-top: 20vh;
+    margin: 0 auto 0 auto;
+    opacity: 0.8;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    height: auto;
+    font-size: 0.9em;
+    color: rgb(0, 0, 0);
+    background-image: url('../images/Poppy.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin: 0 auto 0 auto;
+}
+
+.menu-container {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto 0 auto;
+    margin-bottom: 5vh;
+    font-size: 1.2em;
+    padding-top: 4vh;
+}
+
+.text-container {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 5vh;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 0 auto 0 auto;
+}
+
+.list-container {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 5vh;
+    padding-left: 30px;
+    padding-right: 50px;
+    margin: 0 auto 0 auto;
+}
+
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2.2em;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
+    margin-left: 50px;
+    color: rgb(0, 105, 79);
+    text-align: left;
+}
+
+p {
+    margin-top: 2vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.9em;
+    line-height: 2em;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: inline;
+    padding: 10px;
+    background-color: white;
+}
+
+a {
+    color: rgb(0, 0, 0);
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.active {
+    background-color: rgb(0, 105, 79);
+    color: white;
+}
+
+.list-container ul {
+    list-style-type: none;
+    margin: 0 auto;
+}
+
+.list-container ul {
+    float: left;
+}
+
+.button {
+    background-color: rgb(161, 65, 65);
+    color: white;
+    margin-top: 0.5vh;
+    border-radius: 30px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 0.8em;
+}
+
+form {
+    text-align: left;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 0.5vh;
+    margin-bottom: 1vh;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    line-height: 6em;
+}

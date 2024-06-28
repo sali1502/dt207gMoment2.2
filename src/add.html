@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        CV | Lägg till
+    </title>
+    <link rel="stylesheet" href="css/main.scss">
+    <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+
+    <div class="grid-container">
+
+        <header>
+            <div class="menu-container">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">CV</a></li>
+                        <li><a href="add.html" class="active">Lägg till</a></li>
+                        <li><a href="update.html">Updatera</a></li>
+                        <li><a href="about.html">Om sidan</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <h1>Lägg till arbete</h1>
+            <div class="text-container">
+                <form method="post">
+
+                    <label for="compayname">Företag</label>
+                    <br>
+                    <input type="text" id="compayname" name="compayname">
+                    <br>
+                    <label for="jobtitle">Titel</label>
+                    <br>
+                    <input type="text" id="jobtitle" name="jobtitle">
+                    <br>
+                    <label for="location">Ort</label>
+                    <br>
+                    <input type="text" id="location" name="location">
+                    <br>
+                    <label for="startdate">Startdatum</label>
+                    <br>
+                    <input type="text" id="startdate" name="startdate">
+                    <br>
+                    <label for="enddate">Slutdatum</label>
+                    <br>
+                    <input type="text" id="enddate" name="enddate">
+                    <br>
+                    <label for="description">Beskrivning</label>
+                    <br>
+                    <input type="text" id="description" name="description">
+                    <br>
+                    <input type="submit" value="Lägg till" class="button">
+                </form>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
