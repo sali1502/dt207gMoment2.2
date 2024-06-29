@@ -126,10 +126,10 @@ nav a {
     color: white;
     margin-top: 0.5vh;
     border-radius: 30px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 6px;
+    padding-left: 6px;
     font-size: 0.8em;
 }
 
@@ -158,4 +158,73 @@ input[type=text] {
     color: red;
     font-weight: bold;
     line-height: 6em;
+}
+
+
+.list-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-container li {
+    margin-bottom: 20px;
+    width: 300px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.button-container {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    text-align: left;
+}
+
+.button-container button {
+    margin-right: 10px;
+    background-color: rgb(161, 65, 65);
+    color: white;
+    margin-top: 0.5vh;
+    border-radius: 30px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size: 0.8em;
+}
+
+.compayname {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: left;
+    margin-bottom: 1vh;
+}
+
+.jobtitle {
+    text-align: left;
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+
+.location {
+    text-align: left;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.startdate {
+    text-align: left;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.enddate {
+    text-align: left;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.description {
+    text-align: left;
+    font-size: 1em;
+    line-height: 1.5em;
 }
