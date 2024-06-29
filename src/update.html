@@ -31,32 +31,26 @@
         <main>
             <h1>Uppdatera arbete</h1>
             <div class="text-container">
-                <form method="post">
+                <form method="post" id="uppdate-work-form">
 
-                    <label for="compayname">Företag</label>
-                    <br>
-                    <input type="text" id="compayname" name="compayname">
-                    <br>
-                    <label for="jobtitle">Titel</label>
-                    <br>
-                    <input type="text" id="jobtitle" name="jobtitle">
-                    <br>
-                    <label for="location">Ort</label>
-                    <br>
-                    <input type="text" id="location" name="location">
-                    <br>
-                    <label for="startdate">Startdatum</label>
-                    <br>
-                    <input type="text" id="startdate" name="startdate">
-                    <br>
-                    <label for="enddate">Slutdatum</label>
-                    <br>
-                    <input type="text" id="enddate" name="enddate">
-                    <br>
-                    <label for="description">Beskrivning</label>
-                    <br>
-                    <input type="text" id="description" name="description">
-                    <br>
+                    <label for="compayname">Företag</label><br>
+                    <input type="text" id="compayname" name="compayname" required><br>
+                    
+                    <label for="jobtitle">Titel</label><br>
+                    <input type="text" id="jobtitle" name="jobtitle" required><br>
+                
+                    <label for="location">Ort</label><br>
+                    <input type="text" id="location" name="location" required><br>
+
+                    <label for="startdate">Startdatum</label><br>
+                    <input type="date" id="startdate" name="startdate" required><br><br>
+
+                    <label for="enddate">Slutdatum</label><br>
+                    <input type="date" id="enddate" name="enddate" required><br><br>
+
+                    <label for="description">Beskrivning</label><br>
+                    <textarea id="description" name="description" class="textarea" required></textarea><br>
+
                     <input type="submit" value="Uppdatera" class="button">
                 </form>
             </div>

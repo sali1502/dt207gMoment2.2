@@ -2,11 +2,10 @@
 
 let url = "http://127.0.0.1:3000/api/workexperiences";
 
-getWork();
-getWorkId(54);
-createWork("Life", "Butiksansvarig", "Stockholm", "2006-08-01", "2014-08-01", "Ansvarig för butikens dagliga drift");
-updateWork(55, "Expressen", "Grafiker", "Stockholm", "1989-08-01", "1993-02-15", "Grafiker/redigerare");
-deleteWork(53);
+//getWork();
+//getWorkId(54);
+//updateWork(55, "Expressen", "Grafiker", "Stockholm", "1989-08-01", "1993-02-15", "Grafiker/redigerare");
+//deleteWork(53);
 
 
 // Funktion för att hämta arbetserfarenheter (alla)
@@ -33,7 +32,7 @@ async function getWorkId(id) {
     }
 }
 
-// Funktion för att lägga till arbetserfarenhet
+// Funktion för att lägga till arbetserfarenhet från formulär
 async function createWork(compayname, jobtitle, location, startdate, enddate, description) {
 
     let workexperience = {
@@ -61,6 +60,19 @@ async function createWork(compayname, jobtitle, location, startdate, enddate, de
         console.error("Ett fel uppstod vid postning av arbetserfarenhet: ", error);
     }
 }
+
+document.getElementById("addWorkForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let form = event.target;
+        createWork(
+            form.compayname.value,
+            form.jobtitle.value,
+            form.location.value,
+            form.startdate.value,
+            form.enddate.value,
+            form.description.value
+        );
+});
 
 // Funktion för att uppdatera arbetserfarenhet
 async function updateWork(id, compayname, jobtitle, location, startdate, enddate, description) {
