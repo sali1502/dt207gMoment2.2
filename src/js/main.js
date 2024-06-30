@@ -7,7 +7,6 @@ createWork();
 //getWorkId(id);
 //updateWork(id);
 
-
 // Funktion för att hämta data från API och läsa ut alla arbetserfarenheter till skärmen
 async function getWork() {
     try {
@@ -147,7 +146,9 @@ async function deleteWork(id) {
             throw new Error(`Något gick fel: ${response.statusText}`);
         }
 
-        console.log("Arbetserfarenhet raderad.");
+        console.log("Arbetserfarenhet raderad");
+        displayMessage("Arbetserfarenhet raderad");
+
         // Listan uppdateras efter radering
         await getWork();
     } catch (error) {
@@ -155,7 +156,13 @@ async function deleteWork(id) {
     }
 }
 
-// Ladda befintliga arbetserfarenhter när sidan laddas
+// Funktion för att visa meddelanden på skärmen
+function displayMessage(message) {
+    let messageContainer = document.getElementById("messageContainer");
+    messageContainer.innerText = message;
+}
+
+// Ladda befintliga arbetserfarenhter när sidan laddas om
 document.addEventListener("DOMContentLoaded", getWork);
 
 // Funktion för att uppdatera arbetserfarenhet

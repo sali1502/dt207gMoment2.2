@@ -154,13 +154,6 @@ input[type=text] {
     margin-bottom: 0.5vh;
 }
 
-.error {
-    color: red;
-    font-weight: bold;
-    line-height: 6em;
-}
-
-
 .list-container ul {
     list-style-type: none;
     padding: 0;
@@ -227,4 +220,12 @@ input[type=text] {
     text-align: left;
     font-size: 1em;
     line-height: 1.5em;
+}
+
+#messageContainer { 
+    color: rgb(161, 65, 65);
+    margin-bottom: 5vh;
+    text-align: left;
+    padding-left: 50px;
+    font-weight: bold;
 }
