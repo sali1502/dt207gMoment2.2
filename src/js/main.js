@@ -7,7 +7,7 @@ createWork();
 //getWorkId(id);
 //updateWork(id);
 
-// Funktion för att hämta data från API och läsa ut alla arbetserfarenheter till skärmen
+// Funktion för att hämta arbetserfarenheter och läsa till skärmen
 async function getWork() {
     try {
         const response = await fetch(url);
@@ -60,9 +60,10 @@ async function getWork() {
             let updateButton = document.createElement("button");
             updateButton.className = "updateBtn";
             updateButton.textContent = "Uppdatera";
-            updateButton.onclick = () => updateWorkExperience(item.id);
+            updateButton.onclick = () => {
+                window.location.href = `http://localhost:1234/update.html`;
+            };
             buttonContainer.appendChild(updateButton);
-
             listItem.appendChild(buttonContainer);
             list.appendChild(listItem);
         });
@@ -85,7 +86,7 @@ async function getWorkId(id) {
     }
 }
 
-// Funktion för att skapa ny arbetserfarenhet från input i formulär
+// Funktion för att lägga till en nya arbetserfarenheter
 async function createWork(compayname, jobtitle, location, startdate, enddate, description) {
 
     let workexperience = {
@@ -127,7 +128,7 @@ document.getElementById("addWork").addEventListener("submit", function (event) {
     );
 });
 
-// Funktion för att radera arbetserfarenhet
+// Funktion för att radera arbetserfarenheter
 async function deleteWork(id) {
     if (!id) {
         console.error("Ingen id angiven för radering av arbetserfarenhet.");
@@ -149,20 +150,20 @@ async function deleteWork(id) {
         console.log("Arbetserfarenhet raderad");
         displayMessage("Arbetserfarenhet raderad");
 
-        // Listan uppdateras efter radering
+        // Lista uppdateras efter radering
         await getWork();
     } catch (error) {
         console.error("Ett fel uppstod vid radering av arbetserfarenhet: ", error);
     }
 }
 
-// Funktion för att visa meddelanden på skärmen
+// Funktion för att visa meddelande på skärmen
 function displayMessage(message) {
     let messageContainer = document.getElementById("messageContainer");
     messageContainer.innerText = message;
 }
 
-// Ladda befintliga arbetserfarenhter när sidan laddas om
+// Ladda befintliga arbetserfarenhter när sidan laddas
 document.addEventListener("DOMContentLoaded", getWork);
 
 // Funktion för att uppdatera arbetserfarenhet
