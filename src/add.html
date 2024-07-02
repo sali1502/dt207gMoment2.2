@@ -8,7 +8,6 @@
         CV | Lägg till
     </title>
     <link rel="stylesheet" href="css/main.scss">
-    <script type="module" src="js/main.js"></script>
 </head>
 
 <body>
@@ -29,7 +28,7 @@
         <main>
             <h1>Lägg till arbete</h1>
             <div class="text-container">
-                <form method="post" id="addWork">
+                <form method="post" id="addWorkForm">
 
                     <label for="compayname">Företag</label><br>
                     <input type="text" id="compayname" name="compayname" placeholder="Företag" required><br>
@@ -47,7 +46,8 @@
                     <input type="date" id="enddate" name="enddate" placeholder="Slutdatum" required><br><br>
 
                     <label for="description">Beskrivning</label><br>
-                    <textarea id="description" name="description" placeholder="Beskriv arbetet här..." class="textarea" required></textarea><br>
+                    <textarea id="description" name="description" placeholder="Beskriv arbetet här..." class="textarea"
+                        required></textarea><br>
 
                     <input type="submit" value="Lägg till" class="button">
                 </form>
@@ -55,6 +55,7 @@
         </main>
 
     </div>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>

@@ -8,7 +8,6 @@
         CV | Uppdatera
     </title>
     <link rel="stylesheet" href="css/main.scss">
-    <script type="module" src="js/main.js"></script>
 </head>
 
 <body>
@@ -30,7 +29,6 @@
             <h1>Uppdatera arbete</h1>
             <div class="text-container">
                 <form id="updateWorkForm">
-                    <input type="hidden" name="id">
 
                     <label for="compayname">Företag</label><br>
                     <input type="text" id="compayname" name="compayname" placeholder="Företag" required><br>
@@ -48,14 +46,16 @@
                     <input type="date" id="enddate" name="enddate" placeholder="Slutdatum" required><br><br>
 
                     <label for="description">Beskrivning</label><br>
-                    <textarea id="description" name="description" placeholder="Beskriv arbetet här..." class="textarea" required></textarea><br>
+                    <textarea id="description" name="description" placeholder="Beskriv arbetet här..." class="textarea"
+                        required></textarea><br>
 
                     <input type="submit" value="Uppdatera" class="button">
                 </form>
             </div>
         </main>
-    </div>
 
+    </div>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
