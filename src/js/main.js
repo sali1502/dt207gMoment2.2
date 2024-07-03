@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             event.preventDefault();
             let form = event.target;
 
-            // Kalla på funktionen för att lägga till data med data från formuläret
+            // Kalla på funktionen för att lägga till data
             createWork(
                 form.compayname.value,
                 form.jobtitle.value,
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             let form = event.target;
             let id = form.dataset.id;
 
-            // Kalla på funktionen för att uppdatera data med formulärdata
+            // Kalla på funktionen för att uppdatera data
             await updateWork(
                 id,
                 form.compayname.value,
@@ -49,25 +49,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 form.enddate.value,
                 form.description.value
             );
-
-            // Omdirigera till startsidan
-            window.location.href = "http://localhost:1234/index.html";
         });
 
         // När webbläsarfönstret laddas..
         window.onload = async function () {
-            // Hämta URL-parametrarna
+            // Hämta URL-parametrar med formulärdata
             let params = new URLSearchParams(window.location.search);
             let id = params.get("id");
             if (id) {
-                let workExperience = await getWorkById(id);
+                let dataset = await getWorkById(id);
                 document.getElementById("updateWorkForm").dataset.id = id;
-                document.getElementById("compayname").value = workExperience.compayname;
-                document.getElementById("jobtitle").value = workExperience.jobtitle;
-                document.getElementById("location").value = workExperience.location;
-                document.getElementById("startdate").value = workExperience.startdate;
-                document.getElementById("enddate").value = workExperience.enddate;
-                document.getElementById("description").value = workExperience.description;
+                document.getElementById("compayname").value = dataset.compayname;
+                document.getElementById("jobtitle").value = dataset.jobtitle;
+                document.getElementById("location").value = dataset.location;
+                document.getElementById("startdate").value = dataset.startdate;
+                document.getElementById("enddate").value = dataset.enddate;
+                document.getElementById("description").value = dataset.description;
             }
         };
     }
@@ -148,7 +145,7 @@ async function getWork() {
 
 /* LÄGG TILL DATA - CRUD CREATE/POST */
 
-// Lägg till nya arbetserfarenheter
+// Lägg till ny arbetserfarenhet
 async function createWork(compayname, jobtitle, location, startdate, enddate, description) {
 
     let workexperience = {
@@ -189,57 +186,11 @@ async function getWorkById(id) {
     try {
         const response = await fetch(`${url}/${id}`);
         const data = await response.json();
-        return data;
+        return data[0];
     } catch (error) {
-        console.error("Ett fel uppstod vid hämtning av specifik arbetserfarenhet: ", error);
+        console.error("Ett fel uppstod vid hämtning av arbetserfarenhet: ", error);
     }
 }
-
-// Händelselyssnare för att skicka uppdaterad data
-document.getElementById('updateWorkForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
-
-    // Hämta värden från formulär
-    let id = document.getElementById('id').value;
-    let compayname = document.getElementById('compayname').value;
-    let jobtitle = document.getElementById('jobtitle').value;
-    let location = document.getElementById('location').value;
-    let startdate = document.getElementById('startdate').value;
-    let enddate = document.getElementById('enddate').value;
-    let description = document.getElementById('description').value;
-
-    // Payload
-    const workExperience = {
-        compayname: compayname,
-        jobtitle: jobtitle,
-        location: location,
-        startdate: startdate,
-        enddate: enddate,
-        description: description
-    };
-
-    try {
-        const response = await fetch(`${url}/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(workExperience)
-        });
-
-        if (!response.ok) {
-            throw new Error(`Error: ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        console.log('Update successful:', data);
-
-        // Omdirigera till startsidan
-        window.location.href = "http://localhost:1234/index.html";
-    } catch (error) {
-        console.error("Ett fel uppstod vid uppdatering av arbetserfarenhet: ", error);
-    }
-});
 
 // Uppdatera arbetserfarenhet
 async function updateWork(id, compayname, jobtitle, location, startdate, enddate, description) {
@@ -264,17 +215,18 @@ async function updateWork(id, compayname, jobtitle, location, startdate, enddate
         });
         const data = await response.json();
         console.table(data);
+
     } catch (error) {
         console.error("Ett fel uppstod vid uppdatering av arbetserfarenhet: ", error);
     }
-
     // Omdirigera till startsidan
     window.location.href = "http://localhost:1234/index.html";
+
 }
 
 /* RADERA DATA - CRUD DELETE/DELETE */
 
-// Radera arbetserfarenheter
+// Radera arbetserfarenheter med meddelande
 async function deleteWork(id) {
     if (!id) {
         console.error("Ingen id angiven för radering av arbetserfarenhet.");
@@ -285,7 +237,7 @@ async function deleteWork(id) {
         const response = await fetch(`${url}/${id}`, {
             method: "DELETE",
             headers: {
-                "Content-Type": "application/json"
+                "content-type": "application/json"
             }
         });
 
@@ -294,7 +246,7 @@ async function deleteWork(id) {
         }
 
         console.log("Arbetserfarenhet raderad");
-        displayDeleteMessage("Arbetserfarenhet raderad");
+        displayMessage("Arbetserfarenhet raderad");
 
         await getWork();
     } catch (error) {
@@ -302,8 +254,8 @@ async function deleteWork(id) {
     }
 }
 
-// Visa meddelande för raderade arbetserfarenheter
-function displayDeleteMessage(message) {
+// Meddelande för raderade arbetserfarenheter
+function displayMessage(message) {
     let messageContainer = document.getElementById("messageContainer");
     messageContainer.innerText = message;
 }
