@@ -122,18 +122,6 @@ nav a {
     float: left;
 }
 
-.button {
-    background-color: rgb(161, 65, 65);
-    color: white;
-    margin-top: 0.5vh;
-    border-radius: 30px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-right: 6px;
-    padding-left: 6px;
-    font-size: 0.8em;
-}
-
 form {
     text-align: left;
 }
@@ -230,6 +218,24 @@ input[type=text] {
     padding-left: 50px;
     font-weight: bold;
 }
+
+// Animering - knapp rör sig vid hover
+.button {
+    background-color: rgb(161, 65, 65);
+    color: white;
+    margin-top: 0.5vh;
+    border-radius: 30px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size: 0.8em;
+}
+
+.button:hover {
+    animation: btnHover 2s 0s infinite both ease-out;
+}
+
 
 /* Media querys */
 
