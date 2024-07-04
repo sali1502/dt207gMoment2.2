@@ -23,7 +23,7 @@
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font: 100% base.$font-stack;
     width: 100%;
     height: auto;
     font-size: 0.9em;
@@ -63,7 +63,8 @@ body {
 }
 
 h1 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font: 200% base.$font-stack;
+    font-weight: bold;
     font-size: 2.2em;
     margin-bottom: 4vh;
     margin-left: 50px;
@@ -73,7 +74,7 @@ h1 {
 
 p {
     margin-top: 2vh;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font: 100% base.$font-stack;
     font-size: 0.9em;
     line-height: 2em;
     color: rgb(0, 0, 0);
@@ -222,10 +223,40 @@ input[type=text] {
     line-height: 1.5em;
 }
 
-#messageContainer { 
+#messageContainer {
     color: rgb(161, 65, 65);
     margin-bottom: 5vh;
     text-align: left;
     padding-left: 50px;
     font-weight: bold;
+}
+
+/* Media querys */
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+
+    .grid-container {
+        background-color: base.$primary-bg-darkm !important;
+    }
+
+    body {
+        background-color: base.$primary-bg-darkm !important;
+    }
+
+    h1 {
+        color: base.$primary-heading-darkm !important;
+    }
+
+    li {
+        color: base.$primary-text-darkm !important;
+    }
+
+    div {
+        color: base.$primary-text-darkm !important;
+    }
+
+    p {
+        color: base.$primary-text-darkm !important;
+    }
 }

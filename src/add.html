@@ -26,28 +26,34 @@
         </header>
 
         <main>
+       
             <h1>Lägg till arbete</h1>
             <div class="text-container">
                 <form method="post" id="addWorkForm">
 
                     <label for="compayname">Företag</label><br>
-                    <input type="text" id="compayname" name="compayname" placeholder="Företag" required><br>
+                    <input type="text" id="compayname" name="compayname" placeholder="Företag" required
+                        data-required-msg="Företag är obligatoriskt"><br>
 
                     <label for="jobtitle">Titel</label><br>
-                    <input type="text" id="jobtitle" name="jobtitle" placeholder="Titel" required><br>
+                    <input type="text" id="jobtitle" name="jobtitle" placeholder="Titel" required
+                        data-required-msg="Titel är obligatoriskt"><br>
 
                     <label for="location">Ort</label><br>
-                    <input type="text" id="location" name="location" placeholder="Ort" required><br>
+                    <input type="text" id="location" name="location" placeholder="Ort" required
+                        data-required-msg="Ort är obligatoriskt"><br>
 
                     <label for="startdate">Startdatum</label><br>
-                    <input type="date" id="startdate" name="startdate" placeholder="Startdatum" required><br><br>
+                    <input type="date" id="startdate" name="startdate" placeholder="Startdatum" required
+                        data-required-msg="Startdatum är obligatoriskt"><br><br>
 
                     <label for="enddate">Slutdatum</label><br>
-                    <input type="date" id="enddate" name="enddate" placeholder="Slutdatum" required><br><br>
+                    <input type="date" id="enddate" name="enddate" placeholder="Slutdatum" required
+                        data-required-msg="Slutdatum är obligatoriskt"><br><br>
 
                     <label for="description">Beskrivning</label><br>
                     <textarea id="description" name="description" placeholder="Beskriv arbetet här..." class="textarea"
-                        required></textarea><br>
+                        required data-required-msg="Besrkivande text är obligatoriskt"></textarea><br>
 
                     <input type="submit" value="Lägg till" class="button">
                 </form>

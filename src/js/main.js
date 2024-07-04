@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             let form = event.target;
             let id = form.dataset.id;
 
-            // Kalla på funktionen för att uppdatera data
+            // Kalla på funktionen för att uppdatera data från formulär
             await updateWork(
                 id,
                 form.compayname.value,
